@@ -2,7 +2,7 @@
 
 ## About:
 
-This is a modern binding to the mature [libpq, the official PostgreSQL C-client library](http://www.postgresql.org/docs/current/static/libpq.html).
+This is a modern binding to the mature [libpq](http://www.postgresql.org/docs/current/static/libpq.html), the official PostgreSQL C-client library.
 
 ### Highlights:
 

@@ -1,6 +1,6 @@
 # class pq\Connection
 
-A class representing a connection to the PostgreSQL server.
+The connection to the PostgreSQL server.
 
 See the [General Usage](pq/Connection/: General Usage) page for an introduction on how to use this class.
 
@@ -19,7 +19,7 @@ Broken connection; consider pq\Connection::reset() or recreation.
 * STARTED  
 Waiting for connection to be made.
 * MADE  
-Connection OK; waiting to send.
+Connection okay; waiting to send.
 * AWAITING_RESPONSE  
 Waiting for a response from the server.
 * AUTH_OK  
@@ -71,21 +71,36 @@ Negotiating environment-driven parameter settings.
   Whether the connection is busy with [asynchronous operations](pq/Connection/: Asynchronous Usage).
 * public (readonly) $errorMessage  
   Any error message on failure.
+* public (readonly) $eventHandlers  
+  List of registered event handlers.
 * public $encoding = NULL  
   Connection character set.
 * public $unbuffered = FALSE  
-  Whether to fetch results in unbuffered mode, i.e. each row generates a distinct pq\Result.
+  Whether to fetch [asynchronous](pq/Connection/: Asynchronous Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
 
 ### Connection Information:
 * public (readonly) $db  
-The database name of the connection.
+  The database name of the connection.
 * public (readonly) $user  
-The user name of the connection.
+  The user name of the connection.
 * public (readonly) $pass  
-The password of the connection.
+  The password of the connection.
 * public (readonly) $host  
-The server host name of the connection.
+  The server host name of the connection.
 * public (readonly) $port  
-The port of the connection.
+  The port of the connection.
 * public (readonly) $options  
-The command-line options passed in the connection request.
+  The command-line options passed in the connection request.
+
+### Inheritable Defaults:
+* public $defaultFetchType = pq\Result::FETCH_ARRAY  
+  Default fetch type for future pq\Result instances.
+* public $defaultAutoConvert = pq\Result::CONV_ALL  
+  Default conversion bitmask for future pq\Result instances.
+* public $defaultTransactionIsolation = pq\Transaction::READ_COMMITTED  
+  Default transaction isolation level for future pq\Transaction instances.
+* public $defaultTransactionReadonly = FALSE  
+  Default transaction readonlyness for futire pq\Transaction instances.
+* public $defaultTransactionDeferrable = FALSE  
+  Default transaction deferrability for future pq\Transaction instances.
+  
