@@ -3,7 +3,7 @@
 Trace protocol communication with the server.
 
 > ***NOTE:***  
-  Calling pq\Connection::trace() without parameter or NULL stops tracing.
+  Calling pq\Connection::trace() without argument or NULL stops tracing.
 
 ## Params:
 

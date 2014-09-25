@@ -1,6 +1,6 @@
 # void pq\Connection::listen(string $channel, callable $listener)
 
-Listen on $channel for notifcations.
+Listen on $channel for notifications.
 See pq\Connection::unlisten().
 
 ## Params:
