@@ -1,4 +1,4 @@
-# class pq\Result implements \Traversable, \Countable
+# class pq\Result implements Traversable, Countable
 
 A query result.
 
