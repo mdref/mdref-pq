@@ -16,3 +16,21 @@ None.
 ## Throws:
 
 * pq\Exception\BadMethodCallException
+
+
+## Example:
+
+	<?php
+	
+	$connection = new pq\Connection;
+	$types = new pq\Types($connection);
+	$statement = $connection->prepare("test1", "SELECT NOW() - \$1");
+	$description = $statement->desc();
+
+	printf("%s\n", $types[$description[0]]->typname);
+
+	?>
+
+Yields:
+
+	timestamptz
