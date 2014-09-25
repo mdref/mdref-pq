@@ -1,11 +1,11 @@
-# void pq\Connection::setConverter(pq\ConverterInterface $converter)
+# void pq\Connection::setConverter(pq\Converter $converter)
 
 Set a data type converter.
 
 ## Params:
 
-* pq\ConverterInterface $converter  
-  An instance implementing pq\ConverterInterface.
+* pq\Converter $converter  
+  An instance implementing pq\Converter.
 
 ## Throws:
 
@@ -16,7 +16,7 @@ Set a data type converter.
 
 	<?php
 	
-	class HStoreConverter implements pq\ConverterInterface
+	class HStoreConverter implements pq\Converter
 	{
 		private $oids;
 		

@@ -1,10 +1,10 @@
-# void pq\Connection::unsetConverter(pq\ConverterInterface $converter)
+# void pq\Connection::unsetConverter(pq\Converter $converter)
 
 Stop applying a data type converter.
 
 ## Params:
 
-* pq\ConverterInterface $converter  
+* pq\Converter $converter  
   A converter previously set with pq\Connection::setConverter().
 
 ## Throws:
