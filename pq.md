@@ -10,3 +10,6 @@ This is a modern binding to the mature [libpq](http://www.postgresql.org/docs/cu
 * Extended type [support by pg_type](pq/UsingTypes).
 * Fetching simple [multi-dimensional array maps](pq/FetchingResults#markdown-header-fetching-simple-maps).
 * Working [Gateway implementation](https://bitbucket.org/m6w6/pq-gateway).
+
+> ***NOTE:***  
+  This documentation is work in progress.
