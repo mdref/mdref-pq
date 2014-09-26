@@ -9,5 +9,5 @@ Implementation or SQL syntax error.
 
 ## Properties:
 
-* public string $sqlstate  
+* public (readonly) string $sqlstate  
   The SQLSTATE code, see the [official documentation](http://www.postgresql.org/docs/current/static/errcodes-appendix.html) for further information.

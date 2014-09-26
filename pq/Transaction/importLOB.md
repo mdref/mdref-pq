@@ -1,4 +1,4 @@
-# int pq\Transaction::importLOB(string $local_path[, int $oid = 0)
+# int pq\Transaction::importLOB(string $local_path[, int $oid = pq\LOB::INVALID_OID)
 
 Import a local file into a *large object*.
 
@@ -6,8 +6,8 @@ Import a local file into a *large object*.
 
 * string $local_path  
   A path to a local file to import.
-* Optional int $oid = 0  
-  The target OID. A new *large object* will be created if empty.
+* Optional int $oid = pq\LOB::INVALID_OID  
+  The target OID. A new *large object* will be created if INVALID_OID.
 
 ## Returns:
 
