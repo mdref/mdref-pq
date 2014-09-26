@@ -61,46 +61,46 @@ Negotiating environment-driven parameter settings.
 
 
 ## Properties:
-* public (readonly) $status  
+* public (readonly) int $status  
   A [connection status constant](pq/Connection#Connection.Status:) value.
-* public (readonly) $transactionStatus  
+* public (readonly) int $transactionStatus  
   A [transaction status constant](pq/Connection#Transaction.Status:) value.
-* public (readonly) $socket  
+* public (readonly) resource $socket  
   The server socket resource.
-* public (readonly) $busy  
+* public (readonly) bool $busy  
   Whether the connection is busy with [asynchronous operations](pq/Connection/: Asynchronous Usage).
-* public (readonly) $errorMessage  
+* public (readonly) string $errorMessage  
   Any error message on failure.
-* public (readonly) $eventHandlers  
+* public (readonly) array $eventHandlers  
   List of registered event handlers.
-* public $encoding = NULL  
+* public string $encoding = NULL  
   Connection character set.
-* public $unbuffered = FALSE  
+* public bool $unbuffered = FALSE  
   Whether to fetch [asynchronous](pq/Connection/: Asynchronous Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
 
 ### Connection Information:
-* public (readonly) $db  
+* public (readonly) string $db  
   The database name of the connection.
-* public (readonly) $user  
+* public (readonly) string $user  
   The user name of the connection.
-* public (readonly) $pass  
+* public (readonly) string $pass  
   The password of the connection.
-* public (readonly) $host  
+* public (readonly) string $host  
   The server host name of the connection.
-* public (readonly) $port  
+* public (readonly) string $port  
   The port of the connection.
-* public (readonly) $options  
+* public (readonly) string $options  
   The command-line options passed in the connection request.
 
 ### Inheritable Defaults:
-* public $defaultFetchType = pq\Result::FETCH_ARRAY  
+* public int $defaultFetchType = pq\Result::FETCH_ARRAY  
   Default fetch type for future pq\Result instances.
-* public $defaultAutoConvert = pq\Result::CONV_ALL  
+* public int $defaultAutoConvert = pq\Result::CONV_ALL  
   Default conversion bitmask for future pq\Result instances.
-* public $defaultTransactionIsolation = pq\Transaction::READ_COMMITTED  
+* public int $defaultTransactionIsolation = pq\Transaction::READ_COMMITTED  
   Default transaction isolation level for future pq\Transaction instances.
-* public $defaultTransactionReadonly = FALSE  
+* public bool $defaultTransactionReadonly = FALSE  
   Default transaction readonlyness for futire pq\Transaction instances.
-* public $defaultTransactionDeferrable = FALSE  
+* public bool $defaultTransactionDeferrable = FALSE  
   Default transaction deferrability for future pq\Transaction instances.
   
