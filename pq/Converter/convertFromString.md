@@ -1,4 +1,4 @@
-# mixed pq\Converter::convertFromString(string $data[, int $type = NULL)
+# mixed pq\Converter::convertFromString(string $data, int $type)
 
 Convert a string received from the PostgreSQL server back to a PHP type.
 
@@ -6,8 +6,8 @@ Convert a string received from the PostgreSQL server back to a PHP type.
 
 * string $data  
   String data received from the server.
-* Optional in $type = NULL  
-  The type of the data. Irrelevant for single-type converters.
+* int $type    
+  The type OID of the data. Irrelevant for single-type converters.
 
 ## Returns:
 

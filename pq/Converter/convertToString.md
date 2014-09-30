@@ -1,4 +1,4 @@
-# string pq\Converter::convertToString(mixed $value[, int $type = NULL])
+# string pq\Converter::convertToString(mixed $value, int $type)
 
 Convert a value to a string for use in a query.
 
@@ -6,8 +6,8 @@ Convert a value to a string for use in a query.
 
 * mixed $value  
   The PHP value which should be converted to a string.
-* Optional int $type = NULL  
-  The type the converter should handle. Irrelevant for singly-type converters.
+* int $type  
+  The type OID the converter should handle. Irrelevant for singly-type converters.
 
 ## Returns:
 
