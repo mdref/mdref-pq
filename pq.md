@@ -11,5 +11,19 @@ This is a modern binding to the mature [libpq](http://www.postgresql.org/docs/cu
 * Fetching simple [multi-dimensional array maps](pq/Result/map).
 * Working [Gateway implementation](https://bitbucket.org/m6w6/pq-gateway).
 
-> ***NOTE:***  
-  This documentation is work in progress.
+## Installation:
+
+This extension is hosted at PECL and can be installed with PEAR’s pecl command:
+
+	# pecl install pq
+
+## Dependencies:
+
+This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:
+
+* raphf
+* spl
+
+It optionally depends on the following extensions:
+
+* json
