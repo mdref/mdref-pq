@@ -18,7 +18,7 @@ Convert a value to a string for use in a query.
 	<?php
 	
 	abstract class Example implements pq\Converter {
-		function convertToString($uuid, $type = NULL)  {
+		function convertToString($uuid, $type)  {
 			return uuid_unparse($uuid);
 		}
 	}

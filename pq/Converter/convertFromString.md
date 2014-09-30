@@ -18,7 +18,7 @@ Convert a string received from the PostgreSQL server back to a PHP type.
 	<?php
 	
 	abstract class Example implements pq\Converter {
-		function convertFromString($data, $type = NULL) {
+		function convertFromString($data, $type) {
 			return uuid_parse($data);
 		}
 	}

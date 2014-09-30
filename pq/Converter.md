@@ -52,7 +52,7 @@ Interface for type conversions.
 		 * @param $box Box
 		 * @see pq\Converter::convertToString()
 		 */
-		function convertToString($box, $type = NULL) {
+		function convertToString($box, $type) {
 			return sprintf("(%F,%F),(%F,%F)", 
 				$box->p1->x, $box->p1->y,
 				$box->p2->x, $box->p2->y
@@ -64,7 +64,7 @@ Interface for type conversions.
 		 * @param string $data
 		 * @see pq\Converter::convertFromString()
 		 */
-		function convertFromString($data, $type = NULL) {
+		function convertFromString($data, $type) {
 			list($p1x, $p1y, $p2x, $p2y) = sscanf($data, "(%f,%f),(%f,%f)");
 			return new Box(new Point($p1x, $p1y), new Point($p2x, $p2y));
 		}
