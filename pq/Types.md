@@ -1,9 +1,7 @@
 # class pq\Types implements ArrayAccess
 
 Accessor to the PostgreSQL `pg_type` relation.
-
-> ***NOTE:***  
-  The following OID constants are obtained from stock PostgreSQL 9.3.5. Types from f.e. extensions can be accessed through the ArrayAccess interface of pq\Types.
+See [here for an overview](pq/Types/: Overview).
 
 ## Example:
 
@@ -51,6 +49,8 @@ Yields:
 	typdefault           = 
 	typacl               = 
 
+> ***NOTE:***  
+  The following OID constants are obtained from stock PostgreSQL 9.3.5. Types from f.e. extensions can be accessed through the ArrayAccess interface of pq\Types.
 
 ## Constants:
 

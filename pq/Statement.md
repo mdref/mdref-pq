@@ -1,6 +1,7 @@
 # class pq\Statement
 
 A named prepared statement.
+See pq\Connection::prepare().
 
 ## Properties:
 

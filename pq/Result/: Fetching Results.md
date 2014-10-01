@@ -1,6 +1,6 @@
 # pq\Result: Overview
 
-An synchronous pq\Connection::exec*() call, or calls to pq\Connection::getResult() after using [asynchronous queries](pq/Connection/: Asynchronous Usage) returns an instance of pq\Result on success. See [Query execution](pq/Connection/: Executing Queries), optionally with [types](pq/Types/: Overview) and [Prepared Statements](pq/Statement/: Overview) for details about how to execute queries.
+An synchronous pq\Connection::exec*() call, or calls to pq\Connection::getResult() after using [asynchronous queries](pq/Connection/: Asynchronous Usage) returns an instance of pq\Result on success. See [Query execution](pq/Connection/: Executing Queries), optionally with [types](pq/Types/: Overview) and [Prepared Statements](pq/Statement) for details about how to execute queries.
 
 ## Fetch types:
 
