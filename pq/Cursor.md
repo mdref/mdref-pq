@@ -5,7 +5,7 @@ Declare a cursor.
 ## Constants:
 
 * BINARY  
-  Causes the cursor to return data in binary rather than in text format. You probalby do not want to use that.
+  Causes the cursor to return data in binary rather than in text format. You probably do not want to use that.
 * INSENSITIVE  
   The data returned by the cursor should be unaffected by updates to the tables underlying the cursor that take place after the cursor was opened.
 * WITH_HOLD  
