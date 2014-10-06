@@ -16,6 +16,7 @@ Listen for an event.
 ## Throws:
 
 * pq\Exception\InvalidArgumentException
+* pq\Exception\BadMethodCallException
 
 ## Example:
 

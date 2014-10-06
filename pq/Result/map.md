@@ -13,6 +13,12 @@ Fetch the complete result set as a simple map, a *multi dimensional array*, each
 
 * array, the mapped columns.
 
+## Throws:
+
+* pq\Exception\InvalidArgumentException
+* pq\Exception\BadMethodCallException
+* pq\Exception\RuntimeException
+
 ## Example:
 
 	<?php

@@ -9,3 +9,6 @@ None.
 
 ## Throws:
 
+* pq\Exception\InvalidArgumentException
+* pq\Exception\BadMethodCallException
+* pq\Exception\RuntimeException

@@ -14,5 +14,5 @@ Receive data from the server during pq\Result::COPY_OUT state.
 ## Throws:
 
 * pq\Exception\InvalidArgumentException
-* pq\Exception\BadMethodCallExceptin
+* pq\Exception\BadMethodCallException
 * pq\Exception\RuntimeException

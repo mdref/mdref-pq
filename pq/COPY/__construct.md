@@ -12,3 +12,9 @@ Start a COPY operation.
   Data direction (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).
 * Optional string $options = NULL  
   Any COPY options (see the [official PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-copy.html) for details.
+
+## Throws:
+
+* pq\Exception\InvalidArgumentException
+* pq\Exception\BadMethodCallException
+* pq\Exception\RuntimeException

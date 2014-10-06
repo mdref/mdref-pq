@@ -15,8 +15,8 @@ None.
 
 ## Throws:
 
+* pq\Exception\InvalidArgumentException
 * pq\Exception\BadMethodCallException
-
 
 ## Example:
 
