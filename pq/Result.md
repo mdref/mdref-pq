@@ -2,7 +2,7 @@
 
 A query result.
 
-See [Fetching Results](pq/Result: Fetching Results) for a general overview.
+See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
 
 ## Constants:
 
