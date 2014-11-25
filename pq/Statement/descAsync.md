@@ -1,14 +1,11 @@
-# array pq\Statement::descAsync()
+# void pq\Statement::descAsync(callable $callback)
 
 [Asynchronously](pq/Connection/: Asynchronous Usage) describe the parameters of the prepared statement.
 
 ## Params:
 
-None.
-
-## Returns:
-
-* array, list of type OIDs of the substitution parameters.
+* callable $callback as function(array $oids)  
+  A callback to receive list of type OIDs of the substitution parameters.
 
 ## Throws:
 
