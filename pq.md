@@ -17,6 +17,20 @@ This extension is hosted at [PECL](http://pecl.php.net) and can be installed wit
 
 	# pecl install pq
 
+### PHARext
+
+Watch out for [PECL replicates](https://replicator.pharext.org?pq)
+and pharext packages attached to [releases](https://github.com/m6w6/ext-pq/releases).
+
+### Checkout
+
+	git clone github.com:m6w6/ext-pq
+	cd ext-pq
+	/path/to/phpize
+	./configure --with-php-config=/path/to/php-config
+	make
+	sudo make install
+
 ## Dependencies:
 
 This extension unconditionally depends on the pre-loaded presence of the following PHP extensions:
