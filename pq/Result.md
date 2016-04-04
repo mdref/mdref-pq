@@ -74,4 +74,4 @@ See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
 * public int $fetchType = pq\Result::FETCH_ARRAY  
   The [type of return value](pq/Result#Fetch.types:) the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.
 * public int $autoConvert = pq\Result::CONV_ALL  
-  What [type of conversions](pq\Result#Conversion.bits:) to perform automatically.
+  What [type of conversions](pq/Result#Conversion.bits:) to perform automatically.
