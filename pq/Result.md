@@ -42,7 +42,7 @@ See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
 * CONV_BOOL  
   Automatically convert 'f' and 't' to FALSE and TRUE and vice versa.
 * CONV_INT  
-  Automatically convert integral strings to either int if it fits into maximum integer size and vice versa.
+  Automatically convert integral strings to either int if it fits into maximum integer size or else to float and vice versa.
 * CONV_FLOAT  
   Automatically convert floating point numbers.
 * CONV_SCALAR  
