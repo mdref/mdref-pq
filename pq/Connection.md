@@ -77,6 +77,8 @@ Negotiating environment-driven parameter settings.
   Connection character set.
 * public bool $unbuffered = FALSE  
   Whether to fetch [asynchronous](pq/Connection/: Asynchronous Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
+* public bool $nonblocking = FALSE  
+  Whether to set the underlying socket nonblocking, useful for asynchronous handling of writes. See also pq\Connection::flush().
 
 ### Connection Information:
 * public (readonly) string $db  
@@ -103,4 +105,3 @@ Negotiating environment-driven parameter settings.
   Default transaction readonlyness for futire pq\Transaction instances.
 * public bool $defaultTransactionDeferrable = FALSE  
   Default transaction deferrability for future pq\Transaction instances.
-  

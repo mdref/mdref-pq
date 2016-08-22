@@ -71,6 +71,8 @@ See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
   The number of fields in a single tuple of the result set.
 * public (readonly) int $affectedRows  
   The number of rows affected by a statement.
+* public (readonly) array $diag  
+  Error details. See [PQresultErrorField](https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD) docs.
 * public int $fetchType = pq\Result::FETCH_ARRAY  
   The [type of return value](pq/Result#Fetch.types:) the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.
 * public int $autoConvert = pq\Result::CONV_ALL  
