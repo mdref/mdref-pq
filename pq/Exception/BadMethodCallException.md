@@ -1,6 +1,6 @@
 # class pq\Exception\BadMethodCallException extends BadMethodCallException implements pq\Exception
 
-A method calls was not expected.
+A method call was not expected.
 
 ## Codes:
 
