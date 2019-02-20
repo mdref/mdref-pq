@@ -16,6 +16,6 @@ The result is truncated at any zero byte and wrapped in single quotes.
 * string, a single-quote wrapped string safe for literal use in a qurey.
 * FALSE, if quoting fails.
 
-# Throws:
+## Throws:
 
 * pq\Exception\BadMethodCallException
