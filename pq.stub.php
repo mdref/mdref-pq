@@ -26,30 +26,30 @@ class COPY  {
 	/**
 	 * Start a COPY operation.
 	 * 
-	 * @param pq\Connection $conn The connection to use for the COPY operation.
+	 * @param \pq\Connection $conn The connection to use for the COPY operation.
 	 * @param string $expression The expression generating the data to copy.
 	 * @param int $direction Data direction (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).
 	 * @param string $options Any COPY options (see the [official PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-copy.html) for details.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($conn, $expression, $direction, $options = NULL) {}
+	function __construct(\pq\Connection $conn, string $expression, int $direction, string $options = NULL) {}
 	/**
 	 * End the COPY operation to the server during pq\Result::COPY_IN state.
 	 * 
 	 * @param string $error If set, the COPY operation will abort with provided message.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function end($error = NULL) {}
+	function end(string $error = NULL) {}
 	/**
 	 * Receive data from the server during pq\Result::COPY_OUT state.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return bool success.
 	 */
 	function get() {}
@@ -57,11 +57,11 @@ class COPY  {
 	 * Send data to the server during pq\Result::COPY_IN state.
 	 * 
 	 * @param string $data Data to send to the server.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function put($data) {}
+	function put(string $data) {}
 }
 /**
  * Request cancellation of an asynchronous query.
@@ -70,18 +70,18 @@ class Cancel  {
 	/**
 	 * Create a new cancellation request for an [asynchronous](pq/Connection/: Asynchronous Usage) query.
 	 * 
-	 * @param pq\Connection $conn The connection to request cancellation on.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @param \pq\Connection $conn The connection to request cancellation on.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($conn) {}
+	function __construct(\pq\Connection $conn) {}
 	/**
 	 * Perform the cancellation request.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function cancel() {}
 }
@@ -243,23 +243,23 @@ class Connection  {
 	 * 
 	 * @param string $dsn A ***connection string*** as described [in the PostgreSQL documentation](http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 	 * @param int $flags See [connection flag constants](pq/Connection#Connection.Flags:).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($dsn = "", $flags = 0) {}
+	function __construct(string $dsn = "", int $flags = 0) {}
 	/**
 	 * Declare a cursor for a query.
 	 * 
 	 * @param string $name The identifying name of the cursor.
 	 * @param int $flags Any combination of pq\Cursor constants.
 	 * @param string $query The query for which to open a cursor.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return pq\Cursor an open cursor instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return \pq\Cursor an open cursor instance.
 	 */
-	function declare($name, $flags, $query) {}
+	function declare(string $name, int $flags, string $query) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) declare a cursor for a query.
 	 * 
@@ -269,12 +269,12 @@ class Connection  {
 	 * @param string $name The identifying name of the cursor.
 	 * @param int $flags Any combination of pq\Cursor constants.
 	 * @param string $query The query for which to open a cursor.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return pq\Cursor an open cursor instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return \pq\Cursor an open cursor instance.
 	 */
-	function declareAsync($name, $flags, $query) {}
+	function declareAsync(string $name, int $flags, string $query) {}
 	/**
 	 * Escape binary data for use within a query with the type bytea.
 	 * 
@@ -282,11 +282,11 @@ class Connection  {
 	 *   The result is not wrapped in single quotes.
 	 * 
 	 * @param string $binary The binary data to escape.
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return string|FALSE the escaped binary data.
-	 * 	 or FALSE if escaping fails.
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return string|FALSE string the escaped binary data.
+	 * 		 or FALSE if escaping fails.
 	 */
-	function escapeBytea($binary) {}
+	function escapeBytea(string $binary) {}
 	/**
 	 * [Execute one or multiple SQL queries](pq/Connection/: Executing Queries) on the connection.
 	 * 
@@ -294,13 +294,13 @@ class Connection  {
 	 * > Only the last result will be returned, if the query string contains more than one SQL query.
 	 * 
 	 * @param string $query The queries to send to the server, separated by semi-colon.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
-	 * @return pq\Result 
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
+	 * @return \pq\Result 
 	 */
-	function exec($query) {}
+	function exec(string $query) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) on the connection.
 	 * 
@@ -310,23 +310,23 @@ class Connection  {
 	 * @param string $query The query to send to the server.
 	 * @param callable $callback as function(pq\Result $res)
 	 *   The callback to execute when the query finishes.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function execAsync($query, $callback = NULL) {}
+	function execAsync(string $query, callable $callback = NULL) {}
 	/**
 	 * [Execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
 	 * 
 	 * @param string $query The query to execute.
 	 * @param array $params The parameter list to substitute.
 	 * @param array $types Corresponding list of type OIDs for the parameters.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
-	 * @return pq\Result 
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
+	 * @return \pq\Result 
 	 */
-	function execParams($query, $params, $types = NULL) {}
+	function execParams(string $query, array $params, array $types = NULL) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
 	 * 
@@ -336,11 +336,11 @@ class Connection  {
 	 * @param string $query The query to execute.
 	 * @param array $params The parameter list to substitute.
 	 * @param array $types Corresponding list of type OIDs for the parameters.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\BadMethodCallException
 	 */
-	function execParamsAsync($query, $params, $types = NULL) {}
+	function execParamsAsync(string $query, array $params, array $types = NULL) {}
 	/**
 	 * Flush pending writes on the connection.
 	 * Call after sending any command or data on a nonblocking connection.
@@ -353,8 +353,8 @@ class Connection  {
 	 * > ***NOTE:***
 	 * > This method was added in v1.1.0, resp. v2.1.0.
 	 * 
-	 * @throws pq\Connection\InvalidArgumentException
-	 * @throws pq\Connection\RuntimeException
+	 * @throws \pq\Connection\InvalidArgumentException
+	 * @throws \pq\Connection\RuntimeException
 	 * @return bool whether everything has been flushed.
 	 */
 	function flush() {}
@@ -363,10 +363,10 @@ class Connection  {
 	 * 
 	 * If the query hasn't finished yet, the call will block until the result is available.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return NULL|pq\Result if there has not been a query
-	 * 	 or pq\Result when the query has finished
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return NULL|\pq\Result NULL if there has not been a query
+	 * 		 or \pq\Result when the query has finished
 	 */
 	function getResult() {}
 	/**
@@ -376,11 +376,11 @@ class Connection  {
 	 * @param string $channel The channel to listen on.
 	 * @param callable $listener as function(string $channel, string $message, int $pid)
 	 *   A callback automatically called whenever a notification on $channel arrives.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function listen($channel, $listener) {}
+	function listen(string $channel, callable $listener) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) start listening on $channel for notifcations.
 	 * See pq\Connection::listen().
@@ -388,58 +388,58 @@ class Connection  {
 	 * @param string $channel The channel to listen on.
 	 * @param callable $listener as function(string $channel, string $message, int $pid)
 	 *   A callback automatically called whenever a notification on $channel arrives.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function listenAsync($channel, $listener) {}
+	function listenAsync(string $channel, callable $listener) {}
 	/**
 	 * Notify all listeners on $channel with $message.
 	 * 
 	 * @param string $channel The channel to notify.
 	 * @param string $message The message to send.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function notify($channel, $message) {}
+	function notify(string $channel, string $message) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) start notifying all listeners on $channel with $message.
 	 * 
 	 * @param string $channel The channel to notify.
 	 * @param string $message The message to send.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function notifyAsync($channel, $message) {}
+	function notifyAsync(string $channel, string $message) {}
 	/**
 	 * Stops listening for an event type.
 	 * 
 	 * @param string $event Any pq\Connection::EVENT_*.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return bool success.
 	 */
-	function off($event) {}
+	function off(string $event) {}
 	/**
 	 * Listen for an event.
 	 * 
 	 * @param string $event Any pq\Connection::EVENT_*.
 	 * @param callable $callback as function(pq\Connection $c[, pq\Result $r)
 	 *   The callback to invoke on event.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return int number of previously attached event listeners.
 	 */
-	function on($event, $callback) {}
+	function on(string $event, callable $callback) {}
 	/**
 	 * Poll an [asynchronously](pq/Connection/: Asynchronous Usage) operating connection.
 	 * See pq\Connection::resetAsync() for an usage example.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return int pq\Connection::POLLING_* constant
 	 */
 	function poll() {}
@@ -449,12 +449,12 @@ class Connection  {
 	 * @param string $name The identifying name of the prepared statement.
 	 * @param string $query The query to prepare.
 	 * @param array $types An array of type OIDs for the substitution parameters.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Statement a prepared statement instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Statement a prepared statement instance.
 	 */
-	function prepare($name, $query, $types = NULL) {}
+	function prepare(string $name, string $query, array $types = NULL) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) prepare a named statement for later execution with pq\Statement::exec().
 	 * 
@@ -464,12 +464,12 @@ class Connection  {
 	 * @param string $name The identifying name of the prepared statement.
 	 * @param string $query The query to prepare.
 	 * @param array $types An array of type OIDs for the substitution parameters.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Statement a prepared statement instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Statement a prepared statement instance.
 	 */
-	function prepareAsync($name, $query, $types = NULL) {}
+	function prepareAsync(string $name, string $query, array $types = NULL) {}
 	/**
 	 * Quote a string for safe use in a query.
 	 * The result is truncated at any zero byte and wrapped in single quotes.
@@ -478,11 +478,11 @@ class Connection  {
 	 *   Beware of matching character encodings.
 	 * 
 	 * @param string $payload The payload to quote for use in a query.
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return string|FALSE a single-quote wrapped string safe for literal use in a qurey.
-	 * 	 or FALSE if quoting fails.
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return string|FALSE string a single-quote wrapped string safe for literal use in a qurey.
+	 * 		 or FALSE if quoting fails.
 	 */
-	function quote($payload) {}
+	function quote(string $payload) {}
 	/**
 	 * Quote an identifier for safe usage as name.
 	 * 
@@ -490,35 +490,35 @@ class Connection  {
 	 *   Beware of case-sensitivity.
 	 * 
 	 * @param string $name The name to quote.
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return string|FALSE the quoted identifier.
-	 * 	 or FALSE if quoting fails.
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return string|FALSE string the quoted identifier.
+	 * 		 or FALSE if quoting fails.
 	 */
-	function quoteName($name) {}
+	function quoteName(string $name) {}
 	/**
 	 * Attempt to reset a possibly broken connection to a working state.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function reset() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) reset a possibly broken connection to a working state.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function resetAsync() {}
 	/**
 	 * Set a data type converter.
 	 * 
-	 * @param pq\Converter $converter An instance implementing pq\Converter.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @param \pq\Converter $converter An instance implementing pq\Converter.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 */
-	function setConverter($converter) {}
+	function setConverter(\pq\Converter $converter) {}
 	/**
 	 * Begin a transaction.
 	 * 
@@ -532,12 +532,12 @@ class Connection  {
 	 * > ***NOTE:***
 	 *   A transaction can only be deferrable if it also is readonly and serializable.
 	 *   See the official [PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-set-transaction.html) for further information.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Transaction a begun transaction instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Transaction a begun transaction instance.
 	 */
-	function startTransaction($isolation = pq\Transaction::READ_COMMITTED, $readonly = FALSE, $deferrable = FALSE) {}
+	function startTransaction(int $isolation = pq\Transaction::READ_COMMITTED, bool $readonly = FALSE, bool $deferrable = FALSE) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) begin a transaction.
 	 * 
@@ -551,12 +551,12 @@ class Connection  {
 	 * > ***NOTE:***
 	 *   A transaction can only be deferrable if it also is readonly and serializable.
 	 *   See the official [PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-set-transaction.html) for further information.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Transaction an asynchronously begun transaction instance.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Transaction an asynchronously begun transaction instance.
 	 */
-	function startTransactionAsync($isolation = pq\Transaction::READ_COMMITTED, $readonly = FALSE, $deferrable = FALSE) {}
+	function startTransactionAsync(int $isolation = pq\Transaction::READ_COMMITTED, bool $readonly = FALSE, bool $deferrable = FALSE) {}
 	/**
 	 * Trace protocol communication with the server.
 	 * 
@@ -565,7 +565,7 @@ class Connection  {
 	 * 
 	 * @param resource $stream The resource to which the protocol trace will be output.
 	 *   (The stream must be castable to STDIO).
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return bool success.
 	 */
 	function trace($stream = NULL) {}
@@ -573,39 +573,39 @@ class Connection  {
 	 * Unescape bytea data retrieved from the server.
 	 * 
 	 * @param string $bytea Bytea data retrieved from the server.
-	 * @throws pq\Exception\BadMethodCallException
-	 * @return string|FALSE unescaped binary data.
-	 * 	 or FALSE if unescaping fails.
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @return string|FALSE string unescaped binary data.
+	 * 		 or FALSE if unescaping fails.
 	 */
-	function unescapeBytea($bytea) {}
+	function unescapeBytea(string $bytea) {}
 	/**
 	 * Stop listening for notifications on channel $channel.
 	 * See pq\Connection::listen().
 	 * 
 	 * @param string $channel The name of a channel which is currently listened on.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function unlisten($channel) {}
+	function unlisten(string $channel) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) stop listening for notifications on channel $channel.
 	 * See pq\Connection::unlisten() and pq\Connection::listenAsync().
 	 * 
 	 * @param string $channel The name of a channel which is currently listened on.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function unlistenAsync($channel) {}
+	function unlistenAsync(string $channel) {}
 	/**
 	 * Stop applying a data type converter.
 	 * 
-	 * @param pq\Converter $converter A converter previously set with pq\Connection::setConverter().
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @param \pq\Converter $converter A converter previously set with pq\Connection::setConverter().
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 */
-	function unsetConverter($converter) {}
+	function unsetConverter(\pq\Converter $converter) {}
 }
 /**
  * Interface for type conversions.
@@ -616,9 +616,9 @@ interface Converter  {
 	 * 
 	 * @param string $data String data received from the server.
 	 * @param int $type The type OID of the data. Irrelevant for single-type converters.
-	 * @return mixed the value converted to a PHP type.
+	 * @return  the value converted to a PHP type.
 	 */
-	function convertFromString($data, $type);
+	function convertFromString(string $data, int $type);
 	/**
 	 * Convert a value to a string for use in a query.
 	 * 
@@ -626,7 +626,7 @@ interface Converter  {
 	 * @param int $type The type OID the converter should handle. Irrelevant for singly-type converters.
 	 * @return string a textual represenation of the value accepted by the PostgreSQL server.
 	 */
-	function convertToString($value, $type);
+	function convertToString($value, int $type);
 	/**
 	 * Announce which types the implementing converter can handle.
 	 * 
@@ -665,22 +665,22 @@ class Cursor  {
 	 * Declare a cursor.
 	 * See pq\Connection::declare().
 	 * 
-	 * @param pq\Connection $connection The connection on which the cursor should be declared.
+	 * @param \pq\Connection $connection The connection on which the cursor should be declared.
 	 * @param int $flags See pq\Cursor constants.
 	 * @param string $query The query for ehich the cursor should be opened.
 	 * @param bool $async Whether to declare the cursor [asynchronously](pq/Connection/: Asynchronous Usage).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($connection, $flags, $query, $async) {}
+	function __construct(\pq\Connection $connection, int $flags, string $query, bool $async) {}
 	/**
 	 * Close an open cursor.
 	 * This is a no-op on already closed cursors.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function close() {}
 	/**
@@ -692,12 +692,12 @@ class Cursor  {
 	 * ### Fetch argument:
 	 * 
 	 * FETCH and MOVE usually accepts arguments like the following, where `count` is the number of rows:
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Result the fetched row(s).
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Result the fetched row(s).
 	 */
-	function fetch($spec = "1") {}
+	function fetch(string $spec = "1") {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.
 	 * See pq\Cursor::fetch().
@@ -705,11 +705,11 @@ class Cursor  {
 	 * @param string $spec What to fetch.
 	 * @param callable $callback as function(pq\Result $res)
 	 *   A callback to execute when the result is ready.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function fetchAsync($spec = "1", $callback = NULL) {}
+	function fetchAsync(string $spec = "1", callable $callback = NULL) {}
 	/**
 	 * Move the cursor.
 	 * See pq\Cursor::fetch().
@@ -719,12 +719,12 @@ class Cursor  {
 	 * ### Fetch argument:
 	 * 
 	 * FETCH and MOVE usually accepts arguments like the following, where `count` is the number of rows:
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Result command status.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Result command status.
 	 */
-	function move($spec = "1") {}
+	function move(string $spec = "1") {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.
 	 * See pq\Cursor::move().
@@ -732,11 +732,11 @@ class Cursor  {
 	 * @param string $spec What to fetch.
 	 * @param callable $callback as function(pq\Result $res)
 	 *   A callback to execute when the command completed.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function moveAsync($spec = "1", $callback = NULL) {}
+	function moveAsync(string $spec = "1", callable $callback = NULL) {}
 	/**
 	 * Reopen a cursor.
 	 * This is a no-op on already open cursors.
@@ -744,9 +744,9 @@ class Cursor  {
 	 * > ***NOTE:***
 	 *   Only cursors closed by pq\Cursor::close() will be reopened.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function open() {}
 }
@@ -835,41 +835,41 @@ class LOB  {
 	 * Open or create a *large object*.
 	 * See pq\Transcation::openLOB() and pq\Transaction::createLOB().
 	 * 
-	 * @param pq\Transaction $txn The transaction which wraps the *large object* operations.
+	 * @param \pq\Transaction $txn The transaction which wraps the *large object* operations.
 	 * @param int $oid The OID of the existing *large object* to open.
 	 * @param int $mode Access mode (read, write or read/write).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($txn, $oid = pq\LOB::INVALID_OID, $mode = pq\LOB::RW) {}
+	function __construct(\pq\Transaction $txn, int $oid = pq\LOB::INVALID_OID, int $mode = pq\LOB::RW) {}
 	/**
 	 * Read a string of data from the current position of the *large object*.
 	 * 
 	 * @param int $length The amount of bytes to read from the *large object*.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pa\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pa\Exception\RuntimeException
 	 * @return string the data read.
 	 */
-	function read($length = 0x1000) {}
+	function read(int $length = 0x1000) {}
 	/**
 	 * Seek to a position within the *large object*.
 	 * 
 	 * @param int $offset The position to seek to.
 	 * @param int $whence From where to seek (SEEK_SET, SEEK_CUR or SEEK_END).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return int the new position.
 	 */
-	function seek($offset, $whence = SEEK_SET) {}
+	function seek(int $offset, int $whence = SEEK_SET) {}
 	/**
 	 * Retrieve the current position within the *large object*.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return int the current position.
 	 */
 	function tell() {}
@@ -877,18 +877,18 @@ class LOB  {
 	 * Truncate the *large object*.
 	 * 
 	 * @param int $length The length to truncate to.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function truncate($length = 0) {}
+	function truncate(int $length = 0) {}
 	/**
 	 * Write data to the *large object*.
 	 * 
 	 * @param string $data The data that should be writte to the current position.
 	 * @return int the number of bytes written.
 	 */
-	function write($data) {}
+	function write(string $data) {}
 }
 /**
  * A query result.
@@ -996,16 +996,16 @@ class Result implements \Traversable, \Countable {
 	 * 
 	 * @param mixed $col The column name or index to bind to.
 	 * @param mixed $var The variable reference.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return bool success.
 	 */
 	function bind($col, $var) {}
 	/**
 	 * Count number of rows in this result set.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return int the number of rows.
 	 */
 	function count() {}
@@ -1015,8 +1015,8 @@ class Result implements \Traversable, \Countable {
 	 * > ***NOTE:***
 	 *   This will only return meaningful information for a result of pq\Statement::desc().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return array list of parameter type OIDs for the prepared statement.
 	 */
 	function desc() {}
@@ -1024,30 +1024,30 @@ class Result implements \Traversable, \Countable {
 	 * Fetch all rows at once.
 	 * 
 	 * @param int $fetch_type The type the return value should have, see pq\Result::FETCH_* constants.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 * @return array all fetched rows.
 	 */
-	function fetchAll($fetch_type = pq\Result::$fetchType) {}
+	function fetchAll(int $fetch_type = pq\Result::$fetchType) {}
 	/**
 	 * Fetch all rows of a single column.
 	 * 
 	 * @param int $col The column name or index to fetch.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return array list of column values.
 	 */
-	function fetchAllCols($col = 0) {}
+	function fetchAllCols(int $col = 0) {}
 	/**
 	 * Iteratively fetch a row into bound variables.
 	 * See pq\Result::bind().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return array|NULL the fetched row as numerically indexed array.
-	 * 	 or NULL when iteration ends.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return array|NULL array the fetched row as numerically indexed array.
+	 * 		 or NULL when iteration ends.
 	 */
 	function fetchBound() {}
 	/**
@@ -1055,34 +1055,34 @@ class Result implements \Traversable, \Countable {
 	 * 
 	 * @param mixed $ref The variable where the column value will be stored in.
 	 * @param mixed $col The column name or index.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return bool|NULL success.
-	 * 	 or NULL when iteration ends.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return bool|NULL bool success.
+	 * 		 or NULL when iteration ends.
 	 */
 	function fetchCol($ref, $col = 0) {}
 	/**
 	 * Iteratively fetch a row.
 	 * 
 	 * @param int $fetch_type The type the return value should have, see pq\Result::FETCH_* constants.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return array|object|NULL numerically indexed for pq\Result::FETCH_ARRAY
-	 * 	 or array associatively indexed for pq\Result::FETCH_ASSOC
-	 * 	 or object stdClass instance for pq\Result::FETCH_OBJECT
-	 * 	 or NULL when iteration ends.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return array|array|object|NULL array numerically indexed for pq\Result::FETCH_ARRAY
+	 * 		 or array associatively indexed for pq\Result::FETCH_ASSOC
+	 * 		 or object stdClass instance for pq\Result::FETCH_OBJECT
+	 * 		 or NULL when iteration ends.
 	 */
-	function fetchRow($fetch_type = pq\Result::$fetchType) {}
+	function fetchRow(int $fetch_type = pq\Result::$fetchType) {}
 	/**
 	 * Fetch the complete result set as a simple map, a *multi dimensional array*, each dimension indexed by a column.
 	 * 
 	 * @param mixed $keys The the column indices/names used to index the map.
 	 * @param mixed $vals The column indices/names which should build up the leaf entry of the map.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return array the mapped columns.
 	 */
 	function map($keys = 0, $vals = NULL) {}
@@ -1096,50 +1096,50 @@ class Statement  {
 	 * Prepare a new statement.
 	 * See pq\Connection::prepare().
 	 * 
-	 * @param pq\Connection $conn The connection to prepare the statement on.
+	 * @param \pq\Connection $conn The connection to prepare the statement on.
 	 * @param string $name The name identifying this statement.
 	 * @param string $query The actual query to prepare.
 	 * @param array $types A list of corresponding query parameter type OIDs.
 	 * @param bool $async Whether to prepare the statement [asynchronously](pq/Connection/: Asynchronous Usage).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 */
-	function __construct($conn, $name, $query, $types = NULL, $async = FALSE) {}
+	function __construct(\pq\Connection $conn, string $name, string $query, array $types = NULL, bool $async = FALSE) {}
 	/**
 	 * Bind a variable to an input parameter.
 	 * 
 	 * @param int $param_no The parameter index to bind to.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
 	 */
-	function bind($param_no) {}
+	function bind(int $param_no) {}
 	/**
 	 * Free the server resources used by the prepared statement, so it can no longer be executed.
 	 * This is done implicitly when the object is destroyed.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function deallocate() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) free the server resources used by the
 	 * prepared statement, so it can no longer be executed.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function deallocateAsync() {}
 	/**
 	 * Describe the parameters of the prepared statement.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 * @return array list of type OIDs of the substitution parameters.
 	 */
 	function desc() {}
@@ -1148,47 +1148,47 @@ class Statement  {
 	 * 
 	 * @param callable $callback as function(array $oids)
 	 *   A callback to receive list of type OIDs of the substitution parameters.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function descAsync($callback) {}
+	function descAsync(callable $callback) {}
 	/**
 	 * Execute the prepared statement.
 	 * 
 	 * @param array $params Any parameters to substitute in the preapred statement (defaults to any bou
 	 *   nd variables).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\Result the result of the execution of the prepared statement.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\Result the result of the execution of the prepared statement.
 	 */
-	function exec($params = NULL) {}
+	function exec(array $params = NULL) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) execute the prepared statement.
 	 * 
 	 * @param array $params Any parameters to substitute in the preapred statement (defaults to any bou
 	 *   nd variables).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function execAsync($params = NULL) {}
+	function execAsync(array $params = NULL) {}
 	/**
 	 * Re-prepare a statement that has been deallocated. This is a no-op on already open statements.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function prepare() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) re-prepare a statement that has been
 	 * deallocated. This is a no-op on already open statements.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function prepareAsync() {}
 }
@@ -1236,33 +1236,33 @@ class Transaction  {
 	 * Start a transaction.
 	 * See pq\Connection::startTransaction().
 	 * 
-	 * @param pq\Connection $conn The connection to start the transaction on.
+	 * @param \pq\Connection $conn The connection to start the transaction on.
 	 * @param bool $async Whether to start the transaction [asynchronously](pq/Connection/: Asynchronous Usage).
 	 * @param int $isolation The transaction isolation level (defaults to pq\Connection::$defaultTransactionIsolation).
 	 * @param bool $readonly Whether the transaction is readonly (defaults to pq\Connection::$defaultTransactionReadonly).
 	 * @param bool $deferrable Whether the transaction is deferrable (defaults to pq\Connection::$defaultTransactionDeferrable).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($conn, $async = FALSE, $isolation = pq\Transaction::READ_COMMITTED, $readonly = FALSE, $deferrable = FALSE) {}
+	function __construct(\pq\Connection $conn, bool $async = FALSE, int $isolation = pq\Transaction::READ_COMMITTED, bool $readonly = FALSE, bool $deferrable = FALSE) {}
 	/**
 	 * Commit the transaction or release the previous savepoint.
 	 * See pq\Transaction::savepoint().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 */
 	function commit() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) commit the transaction or release the previous savepoint.
 	 * See pq\Transaction::commit() and pq\Transaction::savepoint().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function commitAsync() {}
 	/**
@@ -1270,31 +1270,31 @@ class Transaction  {
 	 * See pq\Transaction::openLOB().
 	 * 
 	 * @param int $mode How to open the *large object* (read, write or both; see pq\LOB constants).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\LOB instance of the new *large object*.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\LOB instance of the new *large object*.
 	 */
-	function createLOB($mode = pq\LOB::RW) {}
+	function createLOB(int $mode = pq\LOB::RW) {}
 	/**
 	 * Export a *large object* to a local file.
 	 * See pq\Transaction::importLOB().
 	 * 
 	 * @param int $oid The OID of the *large object*.
 	 * @param string $path The path of a local file to export to.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function exportLOB($oid, $path) {}
+	function exportLOB(int $oid, string $path) {}
 	/**
 	 * Export a snapshot for transaction synchronization.
 	 * See pq\Transaction::importSnapshot().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 * @return string the snapshot idfentifier usabel with pq\Transaction::importSnapshot().
 	 */
 	function exportSnapshot() {}
@@ -1302,9 +1302,9 @@ class Transaction  {
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) export a snapshot for transaction synchronization.
 	 * See pq\Transaction::exportSnapshot().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function exportSnapshotAsync() {}
 	/**
@@ -1312,12 +1312,12 @@ class Transaction  {
 	 * 
 	 * @param string $local_path A path to a local file to import.
 	 * @param int $oid The target OID. A new *large object* will be created if INVALID_OID.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 * @return int the (new) OID of the *large object*.
 	 */
-	function importLOB($local_path, $oid = pq\LOB::INVALID_OID) {}
+	function importLOB(string $local_path, int $oid = pq\LOB::INVALID_OID) {}
 	/**
 	 * Import a snapshot from another transaction to synchronize with.
 	 * See pq\Transaction::exportSnapshot().
@@ -1326,12 +1326,12 @@ class Transaction  {
 	 *   The transaction must have an isolation level of at least pq\Transaction::REPEATABLE_READ.
 	 * 
 	 * @param string $snapshot_id The snapshot identifier obtained by exporting a snapshot from a transaction.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 */
-	function importSnapshot($snapshot_id) {}
+	function importSnapshot(string $snapshot_id) {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.
 	 * See pq\Transaction::importSnapshot().
@@ -1340,40 +1340,40 @@ class Transaction  {
 	 *   The transaction must have an isolation level of at least pq\Transaction::REPEATABLE_READ.
 	 * 
 	 * @param string $snapshot_id The snapshot identifier obtained by exporting a snapshot from a transaction.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function importSnapshotAsync($snapshot_id) {}
+	function importSnapshotAsync(string $snapshot_id) {}
 	/**
 	 * Open a *large object*.
 	 * See pq\Transaction::createLOB().
 	 * 
 	 * @param int $oid The OID of the *large object*.
 	 * @param int $mode Operational mode; read, write or both.
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @return pq\LOB instance of the opened *large object*.
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @return \pq\LOB instance of the opened *large object*.
 	 */
-	function openLOB($oid, $mode = pq\LOB::RW) {}
+	function openLOB(int $oid, int $mode = pq\LOB::RW) {}
 	/**
 	 * Rollback the transaction or to the previous savepoit within this transction.
 	 * See pq\Transaction::commit() and pq\Transaction::savepoint().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
-	 * @throws pq\Exception\DomainException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
+	 * @throws \pq\Exception\DomainException
 	 */
 	function rollback() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) rollback the transaction or to the previous savepoit within this transction.
 	 * See pq\Transaction::rollback() and pq\Transaction::savepoint().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function rollbackAsync() {}
 	/**
@@ -1382,18 +1382,18 @@ class Transaction  {
 	 * > ***NOTE:***
 	 *   pq\Transaction tracks an internal counter as savepoint identifier.
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function savepoint() {}
 	/**
 	 * [Asynchronously](pq/Connection/: Asynchronous Usage) create a `SAVEPOINT` within this transaction.
 	 * See pq\Transaction::savepoint().
 	 * 
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
 	function savepointAsync() {}
 }
@@ -2013,22 +2013,22 @@ class Types implements \ArrayAccess {
 	/**
 	 * Create a new instance populated with information obtained from the `pg_type` relation.
 	 * 
-	 * @param pq\Connection $conn The connection to use.
+	 * @param \pq\Connection $conn The connection to use.
 	 * @param array $namespaces Which namespaces to query (defaults to `public` and `pg_catalog`).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function __construct($conn, $namespaces = NULL) {}
+	function __construct(\pq\Connection $conn, array $namespaces = NULL) {}
 	/**
 	 * Refresh type information from `pg_type`.
 	 * 
 	 * @param array $namespaces Which namespaces to query (defaults to `public` and `pg_catalog`).
-	 * @throws pq\Exception\InvalidArgumentException
-	 * @throws pq\Exception\BadMethodCallException
-	 * @throws pq\Exception\RuntimeException
+	 * @throws \pq\Exception\InvalidArgumentException
+	 * @throws \pq\Exception\BadMethodCallException
+	 * @throws \pq\Exception\RuntimeException
 	 */
-	function refresh($namespaces = NULL) {}
+	function refresh(array $namespaces = NULL) {}
 }
 namespace pq\Exception;
 /**
