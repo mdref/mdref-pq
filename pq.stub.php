@@ -616,7 +616,7 @@ interface Converter  {
 	 * 
 	 * @param string $data String data received from the server.
 	 * @param int $type The type OID of the data. Irrelevant for single-type converters.
-	 * @return  the value converted to a PHP type.
+	 * @return mixed the value converted to a PHP type.
 	 */
 	function convertFromString(string $data, int $type);
 	/**
