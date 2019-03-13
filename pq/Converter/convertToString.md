@@ -11,7 +11,7 @@ Convert a value to a string for use in a query.
 
 ## Returns:
 
-* string, a textual represenation of the value accepted by the PostgreSQL server.
+* string, a textual representation of the value accepted by the PostgreSQL server.
 
 ## Example:
 

@@ -4,8 +4,8 @@ Fetch all rows at once.
 
 ## Params:
 
-* Optional int $fetch_type = pq\Result::$fetchType  
-  The type the return value should have, see pq\Result::FETCH_* constants.
+* Optional int $fetch_type  
+  The type the return value should have, see pq\Result::FETCH_* constants, defaults to pq\Result::$fetchType.
 
 ## Returns:
 

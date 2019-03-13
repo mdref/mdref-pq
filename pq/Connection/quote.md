@@ -13,7 +13,7 @@ The result is truncated at any zero byte and wrapped in single quotes.
 
 ## Returns:
 
-* string, a single-quote wrapped string safe for literal use in a qurey.
+* string, a single-quote wrapped string safe for literal use in a query.
 * FALSE, if quoting fails.
 
 ## Throws:

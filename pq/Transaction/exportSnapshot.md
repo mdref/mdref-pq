@@ -9,7 +9,7 @@ None.
 
 ## Returns:
 
-* string, the snapshot idfentifier usabel with pq\Transaction::importSnapshot().
+* string, the snapshot identifier usable with pq\Transaction::importSnapshot().
 
 ## Throws:
 

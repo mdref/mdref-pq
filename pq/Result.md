@@ -17,9 +17,11 @@ See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
 * SINGLE_TUPLE  
   The result contains a single row of the result set when using pq\Connection::$unbuffered.
 * COPY_OUT  
-  COPY data can be recevied from the server.
+  COPY data can be received from the server.
 * COPY_IN  
   COPY data can be sent to the server.
+* COPY_BOTH  
+  COPY in/out data transfer in progress.
 * BAD_RESPONSE  
   The server sent a bad response.
 * NONFATAL_ERROR  
@@ -62,7 +64,7 @@ See [Fetching Results](pq/Result/: Fetching Results) for a general overview.
 * public (readonly) int $status  
   A [status constant](pq/Result#Status.values:).
 * public (readonly) string $statusMessage  
-  The accompanying status messsage.
+  The accompanying status message.
 * public (readonly) string $errorMessage  
   Any error message if $status indicates an error.
 * public (readonly) int $numRows  

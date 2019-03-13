@@ -17,7 +17,7 @@ Read a string of data from the current position of the *large object*.
 
 * pq\Exception\InvalidArgumentException
 * pq\Exception\BadMethodCallException
-* pa\Exception\RuntimeException
+* pq\Exception\RuntimeException
 
 ## Example:
 

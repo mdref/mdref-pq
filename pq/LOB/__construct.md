@@ -1,7 +1,7 @@
 # void pq\LOB::__construct(pq\Transaction $txn[, int $oid = pq\LOB::INVALID_OID[, int $mode = pq\LOB::RW]])
 
 Open or create a *large object*.
-See pq\Transcation::openLOB() and pq\Transaction::createLOB().
+See pq\Transaction::openLOB() and pq\Transaction::createLOB().
 
 ## Params:
 

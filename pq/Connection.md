@@ -13,21 +13,21 @@ If the connection is not already open, perform the connection attempt [asynchron
 
 ### Connection Status:
 * OK  
-Everything well; if a connection has been newly and synchronously created, the connection will always have this status right after creation.
+  Everything well; if a connection has been newly and synchronously created, the connection will always have this status right after creation.
 * BAD  
-Broken connection; consider pq\Connection::reset() or recreation.
+  Broken connection; consider pq\Connection::reset() or recreation.
 * STARTED  
-Waiting for connection to be made.
+  Waiting for connection to be made.
 * MADE  
-Connection okay; waiting to send.
+  Connection okay; waiting to send.
 * AWAITING_RESPONSE  
-Waiting for a response from the server.
+  Waiting for a response from the server.
 * AUTH_OK  
-Received authentication; waiting for backend start-up to finish.
+  Received authentication; waiting for backend start-up to finish.
 * SSL_STARTUP  
-Negotiating SSL encryption.
+  Negotiating SSL encryption.
 * SETENV  
-Negotiating environment-driven parameter settings.
+  Negotiating environment-driven parameter settings.
 
 ### Transaction Status:
 * TRANS_IDLE  
@@ -35,7 +35,7 @@ Negotiating environment-driven parameter settings.
 * TRANS_ACTIVE  
   A transaction command is in progress.
 * TRANS_INTRANS  
-  Idling in a valid transcation block.
+  Idling in a valid transaction block.
 * TRANS_INERROR  
   Idling in a failed transaction block.
 * TRANS_UNKNOWN  
@@ -102,6 +102,6 @@ Negotiating environment-driven parameter settings.
 * public int $defaultTransactionIsolation = pq\Transaction::READ_COMMITTED  
   Default transaction isolation level for future pq\Transaction instances.
 * public bool $defaultTransactionReadonly = FALSE  
-  Default transaction readonlyness for futire pq\Transaction instances.
+  Default transaction readonlyness for future pq\Transaction instances.
 * public bool $defaultTransactionDeferrable = FALSE  
   Default transaction deferrability for future pq\Transaction instances.

@@ -1,4 +1,4 @@
-# array pq\Result::map([mixed $keys = 0[, mixed $vals = NULL]])
+# array pq\Result::map([mixed $keys = 0[, mixed $vals = NULL[, int $fetch_type = pq\Result::$fetchType]]])
 
 Fetch the complete result set as a simple map, a *multi dimensional array*, each dimension indexed by a column.
 
@@ -8,10 +8,12 @@ Fetch the complete result set as a simple map, a *multi dimensional array*, each
   The the column indices/names used to index the map.
 * Optional mixed $vals = NULL  
   The column indices/names which should build up the leaf entry of the map.
+* Optional int $fetch_type  
+  The type the return value should have, see pq\Result::FETCH_* constants, defaults to pq\Result::$fetchType.
 
 ## Returns:
 
-* array, the mapped columns.
+* array|object, the mapped columns.
 
 ## Throws:
 

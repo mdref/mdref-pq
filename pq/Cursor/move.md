@@ -27,7 +27,7 @@ FETCH and MOVE usually accepts arguments like the following, where `count` is th
 * BACKWARD `count`
 * BACKWARD ALL
 
-See the [official PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-move.html) for details.
+See the [official PostgreSQL documentation](http://www.postgresql.org/docs/current/static/sql-move.html) for details.
 
 ## Returns:
 

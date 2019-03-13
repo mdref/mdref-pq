@@ -1,12 +1,14 @@
-# void pq\Statement::execAsync([array $params = NULL])
+# void pq\Statement::execAsync([array $params = NULL, [callable $cb = NULL]])
 
 [Asynchronously](pq/Connection/: Asynchronous Usage) execute the prepared statement.
 
 ## Params:
 
 * Optional array $params = NULL  
-  Any parameters to substitute in the preapred statement (defaults to any bou
+  Any parameters to substitute in the prepared statement (defaults to any bou
   nd variables).
+* Optional callable $cb as function(\pq\Result $res) : void  
+  Result handler callback.
 
 ## Throws:
 

@@ -5,7 +5,7 @@ Execute the prepared statement.
 ## Params:
 
 * Optional array $params = NULL  
-  Any parameters to substitute in the preapred statement (defaults to any bou
+  Any parameters to substitute in the prepared statement (defaults to any bou
   nd variables).
 
 ## Returns:

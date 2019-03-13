@@ -16,7 +16,7 @@ Begin a transaction.
 
 > ***NOTE:***  
   A transaction can only be deferrable if it also is readonly and serializable.  
-  See the official [PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-set-transaction.html) for further information.
+  See the official [PostgreSQL documentation](http://www.postgresql.org/docs/current/static/sql-set-transaction.html) for further information.
 
 ## Returns:
 

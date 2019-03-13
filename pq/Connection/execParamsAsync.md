@@ -1,4 +1,4 @@
-# pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL])
+# pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])
 
 [Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
 
@@ -13,6 +13,8 @@
   The parameter list to substitute.
 * Optional array $types = NULL  
   Corresponding list of type OIDs for the parameters.
+* Optional callable $cb as function(\pq\Result $res) : void  
+  Result handler callback.
 
 ## Throws:
 

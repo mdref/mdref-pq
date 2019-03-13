@@ -1,6 +1,6 @@
 # void pq\Transaction::rollback()
 
-Rollback the transaction or to the previous savepoit within this transction.
+Rollback the transaction or to the previous savepoint within this transaction.
 See pq\Transaction::commit() and pq\Transaction::savepoint().
 
 ## Params:

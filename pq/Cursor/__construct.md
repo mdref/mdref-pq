@@ -1,4 +1,4 @@
-# void pq\Cursor::__construct(pq\Connection $conn, int $flags, string $query[, bool $async = FALSE])
+# void pq\Cursor::__construct(pq\Connection $conn, string $name, int $flags, string $query[, bool $async = FALSE])
 
 Declare a cursor.
 See pq\Connection::declare().
@@ -7,10 +7,12 @@ See pq\Connection::declare().
 
 * pq\Connection $connection  
   The connection on which the cursor should be declared.
+* string $name  
+  The name of the cursor.
 * int $flags  
   See pq\Cursor constants.
 * string $query  
-  The query for ehich the cursor should be opened.
+  The query for which the cursor should be opened.
 * bool $async  
   Whether to declare the cursor [asynchronously](pq/Connection/: Asynchronous Usage).
 

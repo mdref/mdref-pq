@@ -5,7 +5,7 @@ Write data to the *large object*.
 ## Params:
 
 * string $data  
-  The data that should be writte to the current position.
+  The data that should be written to the current position.
 
 ## Returns:
 

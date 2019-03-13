@@ -21,8 +21,8 @@ None.
 
 ## Throws:
 
-* pq\Connection\InvalidArgumentException
-* pq\Connection\RuntimeException when no asynchronous operation is active, or flushing failed
+* pq\Exception\InvalidArgumentException
+* pq\Exception\RuntimeException when no asynchronous operation is active, or flushing failed
 
 ## Example:
 

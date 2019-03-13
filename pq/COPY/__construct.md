@@ -11,7 +11,7 @@ Start a COPY operation.
 * int $direction  
   Data direction (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).
 * Optional string $options = NULL  
-  Any COPY options (see the [official PostgreSQL documentaion](http://www.postgresql.org/docs/current/static/sql-copy.html) for details.
+  Any COPY options (see the [official PostgreSQL documentation](http://www.postgresql.org/docs/current/static/sql-copy.html) for details.
 
 ## Throws:
 
