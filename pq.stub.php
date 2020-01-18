@@ -24,6 +24,38 @@ class COPY  {
 	 */
 	const TO_STDOUT = 1;
 	/**
+	 * The connection to the PostgreSQL server.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
+	/**
+	 * The expression of the COPY statement used to start the operation.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $expression;
+	/**
+	 * The drection of the COPY operation (pq\COPY::FROM_STDIN or pq\COPY::TO_STDOUT).
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $direction;
+	/**
+	 * Any additional options used to start the COPY operation.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $options;
+	/**
 	 * Start a COPY operation.
 	 * 
 	 * @param \pq\Connection $conn The connection to use for the COPY operation.
@@ -68,6 +100,14 @@ class COPY  {
  * Request cancellation of an asynchronous query.
  */
 class Cancel  {
+	/**
+	 * The connection to cancel the query on.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
 	/**
 	 * Create a new cancellation request for an [asynchronous](pq/Connection/: Asynchronous Usage) query.
 	 * 
@@ -181,6 +221,54 @@ class Connection  {
 	 */
 	const EVENT_RESET = 'reset';
 	/**
+	 * A [connection status constant](pq/Connection#Connection.Status:) value.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $status;
+	/**
+	 * A [transaction status constant](pq/Connection#Transaction.Status:) value.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $transactionStatus;
+	/**
+	 * The server socket resource.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var 
+	 */
+	public $socket;
+	/**
+	 * Whether the connection is busy with [asynchronous operations](pq/Connection/: Asynchronous Usage).
+	 * 
+	 * @public
+	 * @readonly
+	 * @var bool
+	 */
+	public $busy;
+	/**
+	 * Any error message on failure.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $errorMessage;
+	/**
+	 * List of registered event handlers.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var array
+	 */
+	public $eventHandlers;
+	/**
 	 * Connection character set.
 	 * 
 	 * @public
@@ -203,6 +291,56 @@ class Connection  {
 	 * @var bool
 	 */
 	public $nonblocking = FALSE;
+	/**
+	 * The database name of the connection.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $db;
+	/**
+	 * The user name of the connection.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $user;
+	/**
+	 * The password of the connection.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $pass;
+	/**
+	 * The server host name of the connection.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $host;
+	/**
+	 * The port of the connection.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $port;
+	/**
+	 * The command-line options passed in the connection request.
+	 * 
+	 * ### Inheritable Defaults:
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $options;
 	/**
 	 * Default fetch type for future pq\Result instances.
 	 * 
@@ -665,6 +803,22 @@ class Cursor  {
 	 */
 	const NO_SCROLL = 32;
 	/**
+	 * The connection the cursor was declared on.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
+	/**
+	 * The identifying name of the cursor.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $name;
+	/**
 	 * Declare a cursor.
 	 * See pq\Connection::declare().
 	 * 
@@ -854,6 +1008,30 @@ class LOB  {
 	 */
 	const RW = 393216;
 	/**
+	 * The transaction wrapping the operations on the *large object*.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Transaction
+	 */
+	public $transaction;
+	/**
+	 * The OID of the *large object*.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $oid;
+	/**
+	 * The stream connected to the *large object*.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var 
+	 */
+	public $stream;
+	/**
 	 * Open or create a *large object*.
 	 * See pq\Transaction::openLOB() and pq\Transaction::createLOB().
 	 * 
@@ -1004,6 +1182,62 @@ class Result implements \Traversable, \Countable {
 	 */
 	const CONV_ALL = 65535;
 	/**
+	 * A [status constant](pq/Result#Status.values:).
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $status;
+	/**
+	 * The accompanying status message.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $statusMessage;
+	/**
+	 * Any error message if $status indicates an error.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $errorMessage;
+	/**
+	 * The number of rows in the result set.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $numRows;
+	/**
+	 * The number of fields in a single tuple of the result set.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $numCols;
+	/**
+	 * The number of rows affected by a statement.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var int
+	 */
+	public $affectedRows;
+	/**
+	 * Error details. See [PQresultErrorField](https://www.postgresql.org/docs/current/static/libpq-exec.html#LIBPQ-PQRESULTERRORFIELD) docs.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var array
+	 */
+	public $diag;
+	/**
 	 * The [type of return value](pq/Result#Fetch.types:) the fetch methods should return when no fetch type argument was given. Defaults to pq\Connection::$defaultFetchType.
 	 * 
 	 * @public
@@ -1120,6 +1354,38 @@ class Result implements \Traversable, \Countable {
  * See pq\Connection::prepare().
  */
 class Statement  {
+	/**
+	 * The connection to the server.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
+	/**
+	 * The identifiying name of the prepared statement.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $name;
+	/**
+	 * The query string used to prepare the statement.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $query;
+	/**
+	 * List of corresponding query parameter type OIDs for the prepared statement.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var array
+	 */
+	public $types;
 	/**
 	 * Prepare a new statement.
 	 * See pq\Connection::prepare().
@@ -1242,6 +1508,14 @@ class Transaction  {
 	 * Transaction isolation level that guarantees serializable repeatability which might lead to serialization_failure on high concurrency.
 	 */
 	const SERIALIZABLE = 2;
+	/**
+	 * The connection the transaction was started on.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
 	/**
 	 * The transaction isolation level.
 	 * 
@@ -2053,6 +2327,14 @@ class Types implements \ArrayAccess {
 	 */
 	const ANYRANGE = 3831;
 	/**
+	 * The connection which was used to obtain type information.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var \pq\Connection
+	 */
+	public $connection;
+	/**
 	 * Create a new instance populated with information obtained from the `pg_type` relation.
 	 * 
 	 * @param \pq\Connection $conn The connection to use.
@@ -2082,6 +2364,14 @@ class BadMethodCallException extends \BadMethodCallException implements \pq\Exce
  * Implementation or SQL syntax error.
  */
 class DomainException extends \DomainException implements \pq\Exception {
+	/**
+	 * The SQLSTATE code, see the [official documentation](http://www.postgresql.org/docs/current/static/errcodes-appendix.html) for further information.
+	 * 
+	 * @public
+	 * @readonly
+	 * @var string
+	 */
+	public $sqlstate;
 }
 /**
  * An invalid argument was passed to a method.
