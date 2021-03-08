@@ -15,7 +15,7 @@ See [here for an overview](pq/Types/: Overview).
 	
 	?>
 
-Yields:
+Yields for a PostgreSQL v9.3 server:
 
 	oid                  = 22
 	typname              = int2vector
@@ -50,7 +50,9 @@ Yields:
 	typacl               = 
 
 > ***NOTE:***  
-  The following OID constants are obtained from stock PostgreSQL 9.3.5. Types from f.e. extensions can be accessed through the ArrayAccess interface of pq\Types.
+  The following OID constants are obtained from the postgres server headers at build time and differ
+  between major versions. Dynamic type information, f.e. from extensions or the actual version of
+  the postgres connected to, can be accessed through the ArrayAccess interface of pq\Types.
 
 ## Constants:
 
@@ -122,12 +124,6 @@ Yields:
   OID of the `float4` type.
 * FLOAT8  
   OID of the `float8` type.
-* ABSTIME  
-  OID of the `abstime` type.
-* RELTIME  
-  OID of the `reltime` type.
-* TINTERVAL  
-  OID of the `tinterval` type.
 * UNKNOWN  
   OID of the `unknown` type.
 * CIRCLE  
@@ -190,12 +186,6 @@ Yields:
   OID of the `float4array` type.
 * FLOAT8ARRAY  
   OID of the `float8array` type.
-* ABSTIMEARRAY  
-  OID of the `abstimearray` type.
-* RELTIMEARRAY  
-  OID of the `reltimearray` type.
-* TINTERVALARRAY  
-  OID of the `tintervalarray` type.
 * POLYGONARRAY  
   OID of the `polygonarray` type.
 * ACLITEM  
@@ -328,8 +318,6 @@ Yields:
   OID of the `int8rangearray` type.
 * RECORD  
   OID of the `record` type.
-* RECORDARRAY  
-  OID of the `recordarray` type.
 * CSTRING  
   OID of the `cstring` type.
 * ANY  
