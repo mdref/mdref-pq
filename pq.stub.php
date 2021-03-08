@@ -241,7 +241,7 @@ class Connection  {
 	 * 
 	 * @public
 	 * @readonly
-	 * @var 
+	 * @var resource
 	 */
 	public $socket;
 	/**
@@ -1028,7 +1028,7 @@ class LOB  {
 	 * 
 	 * @public
 	 * @readonly
-	 * @var 
+	 * @var resource
 	 */
 	public $stream;
 	/**
@@ -1855,18 +1855,6 @@ class Types implements \ArrayAccess {
 	 */
 	const FLOAT8 = 701;
 	/**
-	 * OID of the `abstime` type.
-	 */
-	const ABSTIME = 702;
-	/**
-	 * OID of the `reltime` type.
-	 */
-	const RELTIME = 703;
-	/**
-	 * OID of the `tinterval` type.
-	 */
-	const TINTERVAL = 704;
-	/**
 	 * OID of the `unknown` type.
 	 */
 	const UNKNOWN = 705;
@@ -1990,18 +1978,6 @@ class Types implements \ArrayAccess {
 	 * OID of the `float8array` type.
 	 */
 	const FLOAT8ARRAY = 1022;
-	/**
-	 * OID of the `abstimearray` type.
-	 */
-	const ABSTIMEARRAY = 1023;
-	/**
-	 * OID of the `reltimearray` type.
-	 */
-	const RELTIMEARRAY = 1024;
-	/**
-	 * OID of the `tintervalarray` type.
-	 */
-	const TINTERVALARRAY = 1025;
 	/**
 	 * OID of the `polygonarray` type.
 	 */
@@ -2266,10 +2242,6 @@ class Types implements \ArrayAccess {
 	 * OID of the `record` type.
 	 */
 	const RECORD = 2249;
-	/**
-	 * OID of the `recordarray` type.
-	 */
-	const RECORDARRAY = 2287;
 	/**
 	 * OID of the `cstring` type.
 	 */
