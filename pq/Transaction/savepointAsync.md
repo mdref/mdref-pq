@@ -1,6 +1,6 @@
 # void pq\Transaction::savepointAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) create a `SAVEPOINT` within this transaction.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) create a `SAVEPOINT` within this transaction.
 See pq\Transaction::savepoint().
 
 ## Params:

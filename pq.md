@@ -6,8 +6,8 @@ This is a modern binding to the mature [libpq](http://www.postgresql.org/docs/cu
 
 ### Highlights:
 
-* Nearly 100% support for [asynchronous usage](pq/Connection/: Asynchronous Usage).
-* Extended [type support by pg_type](pq/Types/: Overview).
+* Nearly 100% support for [asynchronous usage](pq/Connection/:%20Asynchronous%20Usage).
+* Extended [type support by pg_type](pq/Types/:%20Overview).
 * Fetching simple [multi-dimensional array maps](pq/Result/map).
 * Working [Gateway implementation](https://bitbucket.org/m6w6/pq-gateway).
 

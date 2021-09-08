@@ -1,6 +1,6 @@
 # pq\Statement pq\Connection::prepareAsync(string $name, string $query[, array $types = NULL])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) prepare a named statement for later execution with pq\Statement::exec().
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) prepare a named statement for later execution with pq\Statement::exec().
 
 > ***NOTE***:  
   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.

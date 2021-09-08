@@ -1,6 +1,6 @@
 # void pq\Connection::resetAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) reset a possibly broken connection to a working state.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) reset a possibly broken connection to a working state.
 
 ## Params:
 

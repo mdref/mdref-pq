@@ -1,6 +1,6 @@
 # void pq\Statement::execAsync([array $params = NULL, [callable $cb = NULL]])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) execute the prepared statement.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) execute the prepared statement.
 
 ## Params:
 

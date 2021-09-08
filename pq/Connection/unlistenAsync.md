@@ -1,6 +1,6 @@
 # void pq\Connection::unlistenAsync(string $channel)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) stop listening for notifications on channel $channel.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) stop listening for notifications on channel $channel.
 See pq\Connection::unlisten() and pq\Connection::listenAsync().
 
 ## Params:

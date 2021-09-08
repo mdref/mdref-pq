@@ -1,6 +1,6 @@
 # pq\Transaction pq\Connection::startTransactionAsync([int $isolation = pq\Transaction::READ_COMMITTED[, bool $readonly = FALSE[, bool $deferrable = FALSE]]])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) begin a transaction.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) begin a transaction.
 
 ## Params:
 

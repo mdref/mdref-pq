@@ -1,6 +1,6 @@
 # pq\Result pq\Connection::execParamsAsync(string $query, array $params[, array $types = NULL, [callable $cb = NULL]])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) [execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) [execute an SQL query](pq/Connection:%20Executing%20Queries) with properly escaped parameters substituted.
 
 > ***NOTE***:  
   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.

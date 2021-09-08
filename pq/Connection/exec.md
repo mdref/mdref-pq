@@ -1,6 +1,6 @@
 # pq\Result pq\Connection::exec(string $query)
 
-[Execute one or multiple SQL queries](pq/Connection/: Executing Queries) on the connection.
+[Execute one or multiple SQL queries](pq/Connection/:%20Executing%20Queries) on the connection.
 
 > ***NOTE:***  
 > Only the last result will be returned, if the query string contains more than one SQL query.

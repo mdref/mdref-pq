@@ -1,7 +1,7 @@
 # void pq\Connection::__construct([string $dsn = ""[, int $flags = 0]])
 
 Create a new PostgreSQL connection.
-See also [General Usage](pq/Connection/: General Usage).
+See also [General Usage](pq/Connection/:%20General%20Usage).
 
 ## Params:
 * Optional string $dsn = ""  

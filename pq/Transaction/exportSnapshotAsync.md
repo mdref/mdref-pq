@@ -1,6 +1,6 @@
 # void pq\Transaction::exportSnapshotAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) export a snapshot for transaction synchronization.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) export a snapshot for transaction synchronization.
 See pq\Transaction::exportSnapshot().
 
 ## Params:

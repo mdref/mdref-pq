@@ -1,6 +1,6 @@
 # void pq\Connection::listenAsync(string $channel, callable $listener)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) start listening on $channel for notifcations.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) start listening on $channel for notifcations.
 See pq\Connection::listen().
 
 ## Params:

@@ -1,6 +1,6 @@
 # pq\Result pq\Connection::execParams(string $query, array $params[, array $types = NULL])
 
-[Execute an SQL query](pq/Connection: Executing Queries) with properly escaped parameters substituted.
+[Execute an SQL query](pq/Connection:%20Executing%20Queries) with properly escaped parameters substituted.
 
 ## Params:
 

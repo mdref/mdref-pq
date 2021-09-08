@@ -8,7 +8,7 @@ See pq\Connection::startTransaction().
 * pq\Connection $conn  
   The connection to start the transaction on.
 * Optional bool $async = FALSE  
-  Whether to start the transaction [asynchronously](pq/Connection/: Asynchronous Usage).
+  Whether to start the transaction [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 * Optional int $isolation = pq\Transaction::READ_COMMITTED  
   The transaction isolation level (defaults to pq\Connection::$defaultTransactionIsolation).
 * Optional bool $readonly = FALSE  

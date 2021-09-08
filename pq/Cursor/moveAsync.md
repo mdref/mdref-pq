@@ -1,6 +1,6 @@
 # void pq\Cursor::moveAsync([string $spec = "1"])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) move the cursor.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) move the cursor.
 See pq\Cursor::move().
 
 ## Params:

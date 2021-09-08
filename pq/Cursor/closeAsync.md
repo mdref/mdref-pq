@@ -1,6 +1,6 @@
 # void pq\Cursor::closeAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) close an open cursor.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) close an open cursor.
 See pq\Cursor::close().
 
 ## Params:

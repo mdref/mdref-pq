@@ -2,14 +2,14 @@
 
 The connection to the PostgreSQL server.
 
-See the [General Usage](pq/Connection/: General Usage) page for an introduction on how to use this class.
+See the [General Usage](pq/Connection/:%20General%20Usage) page for an introduction on how to use this class.
 
 ## Constants:
 ### Connection Flags:
 * PERSISTENT  
 (Re-)open a persistent connection.
 * ASYNC  
-If the connection is not already open, perform the connection attempt [asynchronously](pq/Connection/: Asynchronous Usage).
+If the connection is not already open, perform the connection attempt [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 
 ### Connection Status:
 * OK  
@@ -68,7 +68,7 @@ If the connection is not already open, perform the connection attempt [asynchron
 * public (readonly) resource $socket  
   The server socket resource.
 * public (readonly) bool $busy  
-  Whether the connection is busy with [asynchronous operations](pq/Connection/: Asynchronous Usage).
+  Whether the connection is busy with [asynchronous operations](pq/Connection/:%20Asynchronous%20Usage).
 * public (readonly) string $errorMessage  
   Any error message on failure.
 * public (readonly) array $eventHandlers  
@@ -76,7 +76,7 @@ If the connection is not already open, perform the connection attempt [asynchron
 * public string $encoding = NULL  
   Connection character set.
 * public bool $unbuffered = FALSE  
-  Whether to fetch [asynchronous](pq/Connection/: Asynchronous Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
+  Whether to fetch [asynchronous](pq/Connection/:%20Asynchronous%20Usage) results in unbuffered mode, i.e. each row generates a distinct pq\Result.
 * public bool $nonblocking = FALSE  
   Whether to set the underlying socket nonblocking, useful for asynchronous handling of writes. See also pq\Connection::flush().
 

@@ -14,7 +14,7 @@ See pq\Connection::declare().
 * string $query  
   The query for which the cursor should be opened.
 * bool $async  
-  Whether to declare the cursor [asynchronously](pq/Connection/: Asynchronous Usage).
+  Whether to declare the cursor [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 
 ## Throws:
 

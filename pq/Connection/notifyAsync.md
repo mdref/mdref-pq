@@ -1,6 +1,6 @@
 # void pq\Connection::notifyAsync(string $channel, string $message)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) start notifying all listeners on $channel with $message.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) start notifying all listeners on $channel with $message.
 
 ## Params:
 

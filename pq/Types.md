@@ -1,7 +1,7 @@
 # class pq\Types implements ArrayAccess
 
 Accessor to the PostgreSQL `pg_type` relation.
-See [here for an overview](pq/Types/: Overview).
+See [here for an overview](pq/Types/:%20Overview).
 
 ## Example:
 

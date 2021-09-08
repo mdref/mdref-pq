@@ -1,6 +1,6 @@
 # pq\Result pq\Connection::getResult()
 
-Fetch the result of an [asynchronous](pq/Connection/: Asynchronous Usage) query.
+Fetch the result of an [asynchronous](pq/Connection/:%20Asynchronous%20Usage) query.
 
 If the query hasn't finished yet, the call will block until the result is available.
 

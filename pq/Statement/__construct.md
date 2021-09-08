@@ -14,7 +14,7 @@ See pq\Connection::prepare().
 * Optional array $types = NULL  
   A list of corresponding query parameter type OIDs.
 * Optional bool $async = FALSE  
-  Whether to prepare the statement [asynchronously](pq/Connection/: Asynchronous Usage).
+  Whether to prepare the statement [asynchronously](pq/Connection/:%20Asynchronous%20Usage).
 
 ## Throws:
 

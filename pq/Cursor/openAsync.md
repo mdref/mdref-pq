@@ -1,6 +1,6 @@
 # void pq\Cursor::openAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) reopen a cursor.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) reopen a cursor.
 See pq\Cursor::open().
 
 ## Params:

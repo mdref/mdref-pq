@@ -1,6 +1,6 @@
 # void pq\Cursor::fetchAsync([string $spec = "1"[, callable $callback = NULL]])
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) fetch rows from the cursor.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) fetch rows from the cursor.
 See pq\Cursor::fetch().
 
 ## Params:

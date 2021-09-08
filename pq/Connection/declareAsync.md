@@ -1,6 +1,6 @@
 # pq\Cursor pq\Connection::declareAsync(string $name, int $flags, string $query)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) declare a cursor for a query.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) declare a cursor for a query.
 
 > ***NOTE***:  
   If pq\Connection::$unbuffered is TRUE, each call to pq\Connection::getResult() will generate a distinct pq\Result containing exactly one row.

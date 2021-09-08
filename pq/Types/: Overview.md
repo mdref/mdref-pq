@@ -26,7 +26,7 @@ The types are standard objects indexed by OID and by name and accessible by arra
 > ***NOTE:***  
   The pg_type relation fields have a ``typ`` prefix.
 
-## Usage when [executing queries](pq/Connection/: Executing Queries)
+## Usage when [executing queries](pq/Connection/:%20Executing%20Queries)
 
 
 	<?php

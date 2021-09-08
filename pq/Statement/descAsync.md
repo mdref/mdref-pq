@@ -1,6 +1,6 @@
 # void pq\Statement::descAsync(callable $callback)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) describe the parameters of the prepared statement.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) describe the parameters of the prepared statement.
 
 ## Params:
 

@@ -1,6 +1,6 @@
 # void pq\Transaction::importSnapshotAsync(string $snapshot_id)
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) import a snapshot from another transaction to synchronize with.
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) import a snapshot from another transaction to synchronize with.
 See pq\Transaction::importSnapshot().
 
 > ***NOTE:***  

@@ -1,6 +1,6 @@
 # void pq\Statement::deallocateAsync()
 
-[Asynchronously](pq/Connection/: Asynchronous Usage) free the server resources used by the
+[Asynchronously](pq/Connection/:%20Asynchronous%20Usage) free the server resources used by the
 prepared statement, so it can no longer be executed.
 
 ## Params:
