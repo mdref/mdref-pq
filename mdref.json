@@ -1,0 +1,21 @@
+{
+    "name": "pq",
+    "origin": "github.com/mdref/mdref-pq",
+    "branch": "master",
+    "editUrl": "https://github.com/mdref/mdref-pq/edit/master/%s.md",
+    "commentProvider": {
+        "giscus": {
+            "data": {
+                "repo": "mdref/mdref-pq",
+                "category": "Comments",
+                "repo-id": "MDEwOlJlcG9zaXRvcnkyMTg1MDYzOA==",
+                "category-id": "DIC_kwDOAU1qDs4CBHt5",
+                "mapping": "pathname",
+                "input-position": "bottom",
+                "reactions-enabled": false,
+                "theme": "light",
+                "lang": "en"
+            }
+        }
+    }
+}
